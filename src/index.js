@@ -76,8 +76,8 @@ app.get('/new', (req, res) => {
                                 <p class="secret">${secret}</p>
                                 <p>Use it to download participants data.</p>
                                 <p style="text-align:left;">Commands:<br>
-                                <p class="command">/register</p>
-                                <p class="command">/download/&lt;Access-Key&gt;</p>
+                                <p class="command"><a href="${process.env.QR_CODE_URL}register">/register</a></p>
+                                <p class="command"><a href="${process.env.QR_CODE_URL}download/${secret}">/download/${secret}</a></p>
                             </div>
                             <script>
                                 function downloadSVGAsPNG(svgElementId, filename) {

@@ -160,7 +160,7 @@ a {
 }
 
 .command {
-    color: cyan;
+    color: rgb(0, 204, 255);
     margin: 0px;
     padding: 0px;
 }
