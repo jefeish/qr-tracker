@@ -75,9 +75,9 @@ app.get('/new', (req, res) => {
                                 </div>
                                 <canvas id="qrCanvas" style="display:none;"></canvas>
                                 <button id="download-btn">Download QR Code</button>
-                                <p>Your Access Key is:</p>
+                                <p>Use the Access Key,</p>
                                 <p class="secret">${secret}</p>
-                                <p>Use it to download participants data.</p>
+                                <p>to download participants data.</p>
                                 <p class="command"><a href="${downloadUrl}/download/${secret}">/download/${secret}</a></p>
                             </div>
                             <script>
