@@ -14,7 +14,7 @@ body {
 }
 
 .container {    
-    width: 80%;
+    width: 50%;
     /* max-width: 400px;  */
     background: rgb(14, 0, 69);
     padding: 60px;
@@ -33,11 +33,10 @@ body {
     .container {
         width: 90%;
         height: 50%;   
-        background: rgb(175, 21, 126);
     }
 
     body {
-        font-size: 3em; /* Increase base font size */
+        font-size: 1.5em; /* Increase base font size */
     }
 
     .container p {

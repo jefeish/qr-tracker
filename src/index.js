@@ -66,6 +66,7 @@ app.get('/new', (req, res) => {
                         <head>
                             <title>Registry</title>
                             <link rel="stylesheet" href="styles.css">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         </head>
                         <body>
                             <div class="container">
@@ -168,6 +169,7 @@ app.get('/download/:secret', (req, res) => {
                 <head>
                     <title>Download</title>
                     <link rel="stylesheet" href="styles.css">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 </head>
                 <body>
                     <div class="container">
