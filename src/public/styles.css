@@ -14,8 +14,7 @@ body {
 }
 
 .container {    
-    width: 50%;
-    height: 70%;
+    width: 80%;
     /* max-width: 400px;  */
     background: rgb(14, 0, 69);
     padding: 60px;
@@ -26,6 +25,7 @@ body {
     display: flex; /* Enable Flexbox on the container */
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
+    box-sizing: border-box;
 }
 
 /* Style for mobile devices */
@@ -46,8 +46,8 @@ body {
 }
 
 .container p {
-    margin: 0 0 20px;
-    font-size: 2.0em;
+    margin: 20 10 20 10px;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -141,7 +141,7 @@ option {
 }
 
 button {    
-    font-size: 2em;
+    font-size: 1em;
     padding-left: 20px;
     padding-top: 10px;
     padding-right: 20px;
@@ -168,69 +168,10 @@ a {
 
 .secret {
     color: #fb5e8d;
-    font-size: 1.5em;
-    text-align: center;
 }
 
 .title {
     color: #ffffff;
     font-size: 2em;
     text-align: center;
-}
-
-.title2 {
-    color: #ffffff;
-    font-size: 1em;
-    text-align: center;
-}
-
-.overlay {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.overlay-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 400px; /* Maximum width */
-}
-
-.close {
-    cursor: pointer;
-    color: #aaa;
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.close:hover {
-    color: black;
-}
-
-.info-icon {
-    font-size: small;
-    text-align: right;
-    cursor: pointer;
-}
-
-.circle {
-    display: inline-block; /* Makes the container fit around the text */
-    border: 2px solid grey; /* Circle border */
-    border-radius: 50%; /* Makes it circular */
-    padding-top: 10px; /* Space between text and border */
-    padding-bottom: 10px; /* Space between text and border */
-    padding-right: 13px; /* Space between text and border */
-    padding-left: 13px; /* Space between text and border */
-    text-align: center; /* Center the text inside */
-    position: relative; /* Position for pseudo-elements */
 }
