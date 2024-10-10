@@ -166,6 +166,14 @@ a {
         padding: 10px;
     }
 
+    .container2 {
+        background-image: url('images/astrocat.png');
+        background-size: 30% auto; /* Ensures the width covers the container */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: right bottom; /* Aligns the image to the top right corner */
+        overflow: hidden; /* Hides the excess image that goes beyond the container */
+    }
+
     body {
         font-size: 1.5em; /* Increase base font size */
         justify-content: flex-start; /* Center horizontally */
