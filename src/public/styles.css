@@ -1,0 +1,235 @@
+body {
+    font-family: "Montserrat:ital,wght@0,100..900;1,100..900&display=swap", sans-serif;
+    background: linear-gradient(45deg , #000442, #1138fb); /* Gradient background */
+    background-size: cover; /* Ensures the image covers the entire window */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    color: #ffffff;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0;
+    padding: 0; /* Remove padding to avoid extra space */
+    height: 100vh; /* Ensures the body takes the full height of the viewport */
+}
+
+.container {    
+    width: 50%;
+    height: 70%;
+    /* max-width: 400px;  */
+    background: rgb(14, 0, 69);
+    padding: 60px;
+    margin: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #666;
+    display: flex; /* Enable Flexbox on the container */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Style for mobile devices */
+@media (max-width: 374px) {
+    .container {
+        width: 90%;
+        height: 50%;   
+        background: rgb(175, 21, 126);
+        padding: 60px;
+        margin: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #666;
+        display: flex; /* Enable Flexbox on the container */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items horizontally */
+    }
+}
+.container p {
+    margin: 0 0 20px;
+    font-size: 2.0em;
+    text-align: center;
+}
+
+.container form {
+    width: 80%;
+}
+
+.container2, .container3 {
+    width: 60%; 
+    /* max-width: 400px; */
+    margin: 20px auto; /* Centering with margin */
+    background: rgb(14, 0, 69);
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #666;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.container2 {
+    background-image: url('images/astrocat.png');
+    background-size: 20% auto; /* Ensures the width covers the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: right bottom; /* Aligns the image to the top right corner */
+    overflow: hidden; /* Hides the excess image that goes beyond the container */
+}
+
+.container3 {
+    background-image: url('images/confetti-1.gif');
+    overflow: hidden; /* Hides the excess image that goes beyond the container */
+}
+
+.container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 80%
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.winner {
+    color: #e1ff8d;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style the select dropdown */
+select {
+    appearance: none; /* Remove default styling (for most browsers) */
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+option {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f00;
+}
+
+button {    
+    font-size: 2em;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin: 20px;
+    background: linear-gradient(to top, #282ca7, #4b6cb7);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background: linear-gradient(to top, #4b6cb7, #282ca7);
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+.secret {
+    color: #fb5e8d;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.title2 {
+    color: #ffffff;
+    font-size: 1em;
+    text-align: center;
+}
+
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.overlay-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px; /* Maximum width */
+}
+
+.close {
+    cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+}
+
+.info-icon {
+    font-size: small;
+    text-align: right;
+    cursor: pointer;
+}
+
+.circle {
+    display: inline-block; /* Makes the container fit around the text */
+    border: 2px solid grey; /* Circle border */
+    border-radius: 50%; /* Makes it circular */
+    padding-top: 10px; /* Space between text and border */
+    padding-bottom: 10px; /* Space between text and border */
+    padding-right: 13px; /* Space between text and border */
+    padding-left: 13px; /* Space between text and border */
+    text-align: center; /* Center the text inside */
+    position: relative; /* Position for pseudo-elements */
+}
