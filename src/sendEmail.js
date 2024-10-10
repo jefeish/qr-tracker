@@ -2,7 +2,7 @@ require('dotenv').config();
 const nodemailer = require('nodemailer');
 
 // Function to send an email immediately
-async function sendEmail(to, subject, text, html) {
+async function sendEmail(from, to, subject, text, html) {
     const transporter = nodemailer.createTransport({
         service: process.env.EMAIL_SERVICE,
         auth: {
@@ -12,7 +12,7 @@ async function sendEmail(to, subject, text, html) {
     });
 
     const mailOptions = {
-        from: 'no-reply@github.com',
+        from: from,
         to: to, // list of receivers
         subject: subject, // Subject line
         text: text, // plain text body

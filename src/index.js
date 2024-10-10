@@ -37,15 +37,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// create a new raffle
+// create a new QR-Code
 app.get('/new', (req, res) => {
-        // Generate a secret name and check that it's unique, meaning it's not 
-        // already in the raffleMap. If it is, generate a new one.
-        // try this a maximum of 100 times, after which we'll return a message
-        // that we reached the maximum number of raffles.
-        // NOTE: the secret name is not stored in the database.
-        // It only lives at runtime
-
+        // generate a new secret name
         let secret = generateSecretName();
         let count = 0;
         while (count < 100) {
@@ -60,11 +54,11 @@ app.get('/new', (req, res) => {
         // const imagePath = path.join(__dirname, 'public/images/github-logo.png');
         qrCodeGenerator(`${process.env.QR_CODE_URL}`, null)
             .then(svgWithOverlay => {
-                // Return HTML with the raffle ID and the SVG
+                // Return HTML with the URL-Link and the SVG
                 res.send(`<!DOCTYPE html>
                     <html>
                         <head>
-                            <title>Registry</title>
+                            <title>process.env.TITLE</title>
                             <link rel="stylesheet" href="styles.css">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         </head>
@@ -72,7 +66,7 @@ app.get('/new', (req, res) => {
                             <div class="container">
                                 <p class="title">QR Code <br>${process.env.QR_CODE_URL}</p>
                                 <div style="width: 80%; display: flex; justify-content: center; align-items: center;">
-                                    <svg id="raffle-svg" width="150%" height="150%" xmlns="http://www.w3.org/2000/svg">
+                                    <svg id="qr-code-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                                         ${svgWithOverlay}
                                     </svg>
                                 </div>
@@ -80,7 +74,12 @@ app.get('/new', (req, res) => {
                                 <button id="download-btn">Download QR Code</button>
                                 <p>Your Access Key is:</p>
                                 <p class="secret">${secret}</p>
-                                <p>Keep the Access Key safe, you'll need it to access the QR-Code participants data.</p>
+                                <p>You'll need it to access the QR-Code participants data.</p>
+                                <p style="text-align:left;">Commands:<br>
+                                /register - Join with email<br>
+                                /download/&lt;secret&gt; - Get the registrations
+                                </p>
+                                
                             </div>
                             <script>
                                 function downloadSVGAsPNG(svgElementId, filename) {
@@ -113,7 +112,7 @@ app.get('/new', (req, res) => {
                                 }
 
                                 document.getElementById('download-btn').addEventListener('click', function() {
-                                    downloadSVGAsPNG('raffle-svg', 'qr-code.png');
+                                    downloadSVGAsPNG('qr-code-svg', 'qr-code.png');
                                 });
                             </script>
                         </body>
@@ -135,7 +134,7 @@ app.get('/register', (req, res) => {
 // Handle form submission
 app.post('/submit', (req, res) => {
     const { email } = req.body;
-        // insert the entry into the database (including the raffle number)
+        // insert the entry into the database
         db.run(`INSERT INTO entries (email) VALUES (?)`, [email], function (err) {
             if (err) {
                 return res.status(500).send('Error saving entry');
@@ -147,13 +146,11 @@ app.post('/submit', (req, res) => {
             const from = 'noreply@github.com';
             const to = email;
             const subject = 'Copilot Training Registration';
-            const text = `Thank you! We have received your registration for the Copilot Training`;
-            const html = `<h1>Thank you!</h1><br> We have received your registration for the Copilot Training<br><br>Here is the link to the training: <a href="${process.env.LINK}">${process.env.LINK}</a>`;
-            sendEmail(to, subject, text, html)
+            const text = `Thank you! We have received your registration for the Copilot Training. Here’s the link to access the training: ${process.env.LINK}`;
+            const html = `<h1>Thank you!</h1><br> We have received your registration for the Copilot Training<br><br>Here’s the link to access the training: <a href="${process.env.LINK}">${process.env.LINK}</a>`;
+            sendEmail(from, to, subject, text, html)
             res.sendFile(path.join(__dirname, 'public', 'done.html'));
         });
-
-
 });
 
 
