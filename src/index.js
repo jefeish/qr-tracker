@@ -76,10 +76,8 @@ app.get('/new', (req, res) => {
                                 <p class="secret">${secret}</p>
                                 <p>Use it to download participants data.</p>
                                 <p style="text-align:left;">Commands:<br>
-                                /register - Join with email<br>
-                                /download/&lt;secret&gt; - Get the registrations
-                                </p>
-                                
+                                <p class="command">/register</p>
+                                <p class="command">/download/&lt;Access-Key&gt;</p>
                             </div>
                             <script>
                                 function downloadSVGAsPNG(svgElementId, filename) {

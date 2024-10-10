@@ -159,6 +159,10 @@ a {
     text-align: center;
 }
 
+.command {
+    color: cyan;
+}
+
 /* Style for mobile devices */
 @media (max-width: 600px) {
     .container {
