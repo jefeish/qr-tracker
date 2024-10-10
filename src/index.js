@@ -74,7 +74,7 @@ app.get('/new', (req, res) => {
                                 <button id="download-btn">Download QR Code</button>
                                 <p>Your Access Key is:</p>
                                 <p class="secret">${secret}</p>
-                                <p>You'll need it to access the QR-Code participants data.</p>
+                                <p>Use it to download participants data.</p>
                                 <p style="text-align:left;">Commands:<br>
                                 /register - Join with email<br>
                                 /download/&lt;secret&gt; - Get the registrations
