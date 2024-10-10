@@ -1,0 +1,120 @@
+# nodejs gitignore
+# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.log
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# local files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# next.js
+/.next/
+/out/
+
+# vercel
+/.vercel
+
+# production
+/build
+
+# nuxt.js
+/.nuxt/
+/dist/
+/static/
+
+# vuepress
+/.vuepress/dist/
+/.vuepress/ssr-bundle/
+
+# vite
+/.vite/
+
+# vue.js
+/dist
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Sapper
+/node_modules
+/dist
+
+# Gridsome
+/dist
+.cache
+src/assets/manifest.json
+
+# Gatsby
+.cache/
+public/
+
+# User-specific files
+*.rs-user
+*.rs-user-project
+/.vscode
+/.idea
+
+# Environment
+/.env
+
+# macOS
+.DS_Store
+
+# Netlify
+# /out
+
+# WebStorm
+.idea/
+
+# Build file
+build/
+
+# Serverless
+.serverless/
+
+# Local server settings
+web/.settings/
+
+# Visual Studio Code
+.vscode/
+
+# Browser IDE
+/.webide/
+
+# WebStorm
+.idea/
+
+# Local Web IDE Settings
+.webide/
+
+# WebStorm Patch
+# Comment next line if you plan to use WebStorm
+# .idea/workspace.xml
+
+# ESLint
+.eslintcache
+
+# Ignore all local history of files
+.history
