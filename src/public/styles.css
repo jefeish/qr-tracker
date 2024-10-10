@@ -164,7 +164,6 @@ a {
     .container {
         width: 80%;  
         padding: 10px;
-
     }
 
     body {
@@ -182,7 +181,7 @@ a {
     }
 
     input, select, button {
-        font-size: 1em; /* Increase input, select, and button font size */
+        font-size: .8em; /* Increase input, select, and button font size */
     }
 
     .title {
@@ -191,5 +190,6 @@ a {
 
     .secret {
         color: #fb5e8d;
+        margin: 10 10 10 10px;
     }
 }
