@@ -51,6 +51,9 @@ app.get('/new', (req, res) => {
         // log the qrList
         console.log('qrList:', qrList);
         
+        let downloadUrl = process.env.QR_CODE_URL;
+        downloadUrl = downloadUrl.replace('/register', '');
+        
         // const imagePath = path.join(__dirname, 'public/images/github-logo.png');
         qrCodeGenerator(`${process.env.QR_CODE_URL}`, null)
             .then(svgWithOverlay => {
@@ -75,9 +78,7 @@ app.get('/new', (req, res) => {
                                 <p>Your Access Key is:</p>
                                 <p class="secret">${secret}</p>
                                 <p>Use it to download participants data.</p>
-                                <p style="text-align:left; margin:0px;">Commands:<br>
-                                <p class="command"><a href="${process.env.QR_CODE_URL}/register">/register</a></p>
-                                <p class="command"><a href="${process.env.QR_CODE_URL}/download/${secret}">/download/${secret}</a></p>
+                                <p class="command"><a href="${downloadUrl}/download/${secret}">/download/${secret}</a></p>
                             </div>
                             <script>
                                 function downloadSVGAsPNG(svgElementId, filename) {
