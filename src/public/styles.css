@@ -182,6 +182,9 @@ a {
         flex-direction: column; /* Stack elements vertically */
         align-items: center; /* Center items horizontally */
     }
+    .container2 p {
+        font-size: .8em; /* Increase paragraph font size */
+    }
 
     .container p {
         font-size: .8em; /* Increase paragraph font size */
@@ -196,7 +199,7 @@ a {
     }
 
     .title {
-        font-size: 2.5em; /* Increase title font size */
+        font-size: 2em; /* Increase title font size */
     }
 
     .secret {
