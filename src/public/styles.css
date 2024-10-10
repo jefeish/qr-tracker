@@ -161,6 +161,8 @@ a {
 
 .command {
     color: cyan;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* Style for mobile devices */
