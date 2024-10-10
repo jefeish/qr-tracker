@@ -28,35 +28,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Style for mobile devices */
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-        height: 50%;   
-    }
-
-    body {
-        font-size: 1.5em; /* Increase base font size */
-    }
-
-    .container p {
-        font-size: 1.2em; /* Increase paragraph font size */
-    }
-
-    h1 {
-        font-size: 2em; /* Increase heading font size */
-    }
-
-    input, select, button {
-        font-size: 1.2em; /* Increase input, select, and button font size */
-    }
-
-    .title {
-        font-size: 2.5em; /* Increase title font size */
-    }
-}
-
-
 .container p {
     margin: 20 10 20 10px;
     font-size: 1em;
@@ -186,4 +157,39 @@ a {
     color: #ffffff;
     font-size: 2em;
     text-align: center;
+}
+
+/* Style for mobile devices */
+@media (max-width: 600px) {
+    .container {
+        width: 80%;  
+        padding: 10px;
+
+    }
+
+    body {
+        font-size: 1.5em; /* Increase base font size */
+        justify-content: flex-start; /* Center horizontally */
+        align-items: flex-start; /* Center vertically */
+    }
+
+    .container p {
+        font-size: .8em; /* Increase paragraph font size */
+    }
+
+    h1 {
+        font-size: 2em; /* Increase heading font size */
+    }
+
+    input, select, button {
+        font-size: 1em; /* Increase input, select, and button font size */
+    }
+
+    .title {
+        font-size: 2.5em; /* Increase title font size */
+    }
+
+    .secret {
+        color: #fb5e8d;
+    }
 }

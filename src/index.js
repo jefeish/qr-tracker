@@ -70,16 +70,14 @@ app.get('/new', (req, res) => {
                         </head>
                         <body>
                             <div class="container">
-                                <p class="title">QR Code <br>${process.env.QR_CODE_URL}</p><br><br>
+                                <p class="title">QR Code <br>${process.env.QR_CODE_URL}</p>
                                 <div style="width: 80%; display: flex; justify-content: center; align-items: center;">
                                     <svg id="raffle-svg" width="150%" height="150%" xmlns="http://www.w3.org/2000/svg">
                                         ${svgWithOverlay}
                                     </svg>
                                 </div>
                                 <canvas id="qrCanvas" style="display:none;"></canvas>
-                                <br><br>
                                 <button id="download-btn">Download QR Code</button>
-                                <br>
                                 <p>Your Access Key is:</p>
                                 <p class="secret">${secret}</p>
                                 <p>Keep the Access Key safe, you'll need it to access the QR-Code participants data.</p>
