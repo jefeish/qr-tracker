@@ -171,6 +171,7 @@ app.post('/submit', (req, res) => {
         }
         else {
             console.log(`Entry: ${email} already exists`);
+            res.sendFile(path.join(__dirname, 'public', 'done.html'));
         }  
     });
 });
