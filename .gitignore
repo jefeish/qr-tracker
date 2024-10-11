@@ -88,9 +88,6 @@ public/
 # WebStorm
 .idea/
 
-# Build file
-build/
-
 # Serverless
 .serverless/
 
