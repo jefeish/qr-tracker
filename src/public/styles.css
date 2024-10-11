@@ -226,8 +226,8 @@ a {
 
     .logo {
         position: absolute;
-        top: 10px; /* Adjust as needed */
-        left: 10px; /* Adjust as needed */
-        width: 30%; /* Adjust as needed */
+        top: 5px; /* Adjust as needed */
+        left: 5px; /* Adjust as needed */
+        width: 40%; /* Adjust as needed */
     }
 }
