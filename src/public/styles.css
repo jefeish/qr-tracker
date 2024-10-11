@@ -223,4 +223,11 @@ a {
     button {    
         font-size: .8em;
     }
+
+    .logo {
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 10px; /* Adjust as needed */
+        width: 25%; /* Adjust as needed */
+    }
 }
