@@ -66,6 +66,7 @@ app.get('/new', (req, res) => {
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         </head>
                         <body>
+                            <img src="/images/build-with-copilot.png" alt="Logo" class="logo">
                             <div class="container">
                                 <p class="title">QR Code <br>${process.env.QR_CODE_URL}</p>
                                 <div style="width: 80%; display: flex; justify-content: center; align-items: center;">
@@ -166,12 +167,12 @@ app.get('/download/:secret', (req, res) => {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 </head>
                 <body>
+                    <img src="/images/build-with-copilot.png" alt="Logo" class="logo">
                     <div class="container">
                         <p class="title">I am sorry, no data could be found.</p>
                     </div>
                 </body>
             </html>`);
-        return res.status(404)
     }
 
     db.all(`SELECT * FROM entries`, (err, rows) => {

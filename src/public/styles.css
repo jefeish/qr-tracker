@@ -13,6 +13,13 @@ body {
     height: 100vh; /* Ensures the body takes the full height of the viewport */
 }
 
+.logo {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    width: 15%; /* Adjust as needed */
+}
+
 .container {    
     width: 50%;
     /* max-width: 400px;  */
