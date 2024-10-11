@@ -46,10 +46,12 @@ app.get('/new', (req, res) => {
             secret = generateSecretName();
             count++;
         }
+    
+        logToFile(`secret: ${secret}`);
         qrList.push(secret);
 
         // log the qrList
-        console.log('qrList:', qrList);
+    logToFile(`qrList: ${ qrList }`);
         
         let downloadUrl = process.env.QR_CODE_URL;
         downloadUrl = downloadUrl.replace('/register', '');
@@ -121,14 +123,14 @@ app.get('/new', (req, res) => {
                     </html>`);
             })
             .catch(err => {
-                console.error(err);
+                logToFile(err);
                 res.status(500).send('Error generating QR Code');
             });
 });
 
 // Render the form
 app.get('/register', (req, res) => {
-    console.log('dirname:', __dirname);
+    logToFile(`dirname: ${__dirname}`);
     res.sendFile(path.join(__dirname, 'public', 'form.html'));
 });
 
@@ -148,7 +150,7 @@ app.post('/submit', (req, res) => {
                     return res.status(500).send('Error saving entry');
                 }
 
-                console.log(`Entry: ${email} saved`);
+                logToFile(`Entry: ${email} saved`);
                 // dump the database to a CSV file
                 const csv = 'registration-list.csv';
                 fs.writeFileSync(csv, 'email\n');
@@ -170,7 +172,7 @@ app.post('/submit', (req, res) => {
             });
         }
         else {
-            console.log(`Entry: ${email} already exists`);
+            logToFile(`Entry: ${email} already exists`);
             res.sendFile(path.join(__dirname, 'public', 'done.html'));
         }  
     });
@@ -202,7 +204,7 @@ app.post('/submit', (req, res) => {
 //         if (err) {
 //             return res.status(500).send('Error retrieving entries');
 //         }
-//         console.log('All entries:', rows); // Log the result to the console
+//         logToFile('All entries:', rows); // Log the result to the console
 
 //         if (rows.length > 0) {
 //             // Extract the keys from the first object to create the header
@@ -215,7 +217,7 @@ app.post('/submit', (req, res) => {
 //             const csvString = `${headers}\n${rowsString}`;
 
 //             // Now csvString contains the CSV data with headers
-//             console.log(csvString);
+//             logToFile(csvString);
 //             fs.writeFileSync('registration-list.csv', csvString);
 //         }
 
@@ -234,7 +236,14 @@ app.post('/submit', (req, res) => {
 //     });
 // });
 
+const logFile = path.join(__dirname, 'app.log');
+
+function logToFile(message) {
+    const timestamp = new Date().toISOString();
+    fs.appendFileSync(logFile, `[${timestamp}] ${message}\n`);
+}
+
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    logToFile(`Server is running on http://localhost:${PORT}`);
 });
